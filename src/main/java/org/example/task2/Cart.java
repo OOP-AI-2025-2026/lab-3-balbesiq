@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class Cart {
 
-    public Item[] contents;
-    int index;
+    private Item[] contents;
+    private int index;
 
-    Cart(Item[] _contents) {
+    public Cart(Item[] _contents) {
         this.contents = _contents;
     }
 
@@ -40,7 +40,7 @@ public class Cart {
 
     public int findItemInArray(Item item) {
         for (int i = 0; i < index; i++) {
-            if (contents[i].id == item.id) {
+            if (contents[i].getId() == item.getId()) {
                 return i;
             }
         }
@@ -48,7 +48,7 @@ public class Cart {
         return -1;
     }
 
-    void add(Item item) {
+    public void add(Item item) {
         if (isCartFull())
             return;
 
@@ -63,7 +63,15 @@ public class Cart {
     @Override
     public String toString() {
         return "Cart{" +
-                "contents=" + Arrays.toString(contents) +
+                "contents=" + Arrays.toString(getItems()) +
                 '}' + "\n";
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public Item[] getItems() {
+        return Arrays.copyOf(this.contents, this.index); // безопасно выдаём копию текущих товаров
     }
 }
