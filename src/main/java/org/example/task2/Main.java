@@ -24,5 +24,41 @@ public class Main {
         Order order = new Order(1L, "John");
         String bill = order.formOrderBill(cart);
         System.out.println(bill);
+
+        //Box test
+
+        int length=20;
+        int width=22;
+        int height=10;
+
+        System.out.println("\n\nBox: length: "+length+", width: "+width+",height: "+height);
+
+        Box box = new Box(length,width,height);
+        System.out.println("\t Surface area = "+box.surfaceArea());
+        System.out.println("\t Lateral surface area = "+box.lateralSurfaceArea());
+        System.out.println("\t Volume = "+box.volume());
+
+        //IntStack test
+
+        IntStack stack = new IntStack();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println("\n\nStack size: " + stack.size());
+        System.out.println("Top element: " + stack.peek());
+
+        int popped = stack.pop();
+        System.out.println("Popped element: " + popped);
+        System.out.println("New top element: " + stack.peek());
+        System.out.println("Stack size after pop: " + stack.size());
+
+        System.out.println("Is stack empty? " + stack.isEmpty());
+
+        stack.clean();
+        System.out.println("Stack cleared. Size: " + stack.size());
+        System.out.println("Is stack empty? " + stack.isEmpty());
+
     }
-}
+
+    }

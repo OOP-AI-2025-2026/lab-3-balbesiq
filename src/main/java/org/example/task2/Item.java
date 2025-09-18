@@ -2,9 +2,21 @@ package org.example.task2;
 
 public class Item {
 
-    public long id;
-    public String name;
-    public double price;
+    private final long id;
+    private String name;
+    private double price;
+
+    public String getName(){
+        return name;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public long getId(){
+        return id;
+    }
 
     public Item(long _id, String _name, double _price) {
         this.id = _id;
